@@ -165,7 +165,8 @@ except AttributeError:
 print("Modified list:", numbers_list)
 print("Tuple remains unchanged:", numbers_tuple)
 
-"""--------------------------------------------------------------------------------
+"""-------------------------------------------------------------------------------- 
+
 1. **Set**:
 A set in Python is a collection of unique elements that are unordered. This means that you cannot access elements by indices, and the elements are stored in an unordered manner. The main feature of a set is that each element in the set must be unique. Sets are useful when you want to perform set operations, such as mathematical set operations (e.g., union, difference, intersection).
 
