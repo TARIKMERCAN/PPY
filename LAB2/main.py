@@ -104,5 +104,180 @@ sorted_tuple = tuple(sorted(numbers_tuple))
 
 print("Sorted list:", numbers_list)
 print("Sorted tuple:", sorted_tuple)
+"""5.
+Extend the previous Python program to demonstrate the manipulation of lists using the append(), insert(), and remove() functions, and to emphasize the immutability of tuples.
+
+  a. Input: Ask the user to enter a series of space-separated integers.
+
+  b. Convert Input: Convert the input string into a list of integers and a tuple of integers.
+
+  c. Manipulate List: Use the append(), insert(), and remove() functions to modify the list.
+
+  d. Attempt to Modify Tuple: Try to modify the tuple using the same operations as the list.
+
+  e. Print Output: Print the modified list and attempt to print the modified tuple.
+
+  example:
+  ```
+  Enter a series of space-separated integers: 5 2 8 1 9
+
+  Tuples are immutable and cannot be modified.
+  Modified list: [5, 2, 20, 1, 9, 10]
+  Tuple remains unchanged: (5, 2, 8, 1, 9)
+  ```
+"""
+
+nput_numbers = input("Enter a series of space-separated integers: ")
+
+numbers_list = []
+current_number = ""
+
+for char in input_numbers:
+    if char != ' ':
+        current_number += char
+    else:
+        if current_number:
+            numbers_list.append(int(current_number))
+            current_number = ""
+
+if current_number:
+    numbers_list.append(int(current_number))
+
+numbers_tuple = tuple(numbers_list)
+
+numbers_list.append(10)
+numbers_list.insert(2, 20)
+numbers_list.remove(8)
+
+try:
+    numbers_tuple.append(10)
+except AttributeError:
+    print("Tuples are immutable and cannot be modified.")
+try:
+    numbers_tuple.insert(2, 20)
+except AttributeError:
+    pass
+try:
+    numbers_tuple.remove(8)
+except AttributeError:
+    pass
+
+print("Modified list:", numbers_list)
+print("Tuple remains unchanged:", numbers_tuple)
+
+"""--------------------------------------------------------------------------------
+1. **Set**:
+A set in Python is a collection of unique elements that are unordered. This means that you cannot access elements by indices, and the elements are stored in an unordered manner. The main feature of a set is that each element in the set must be unique. Sets are useful when you want to perform set operations, such as mathematical set operations (e.g., union, difference, intersection).
+
+Example of creating a set:
+```python
+set = {1, 2, 3, 4, 5}  # Creating a set
+print(set)  # Displaying the set
+```
+
+2. **Dictionary**:
+A dictionary in Python is a collection of key-value pairs, where each key is unique. Dictionaries are unique in the sense that they allow us to associate specific values with specific keys, making it easy to retrieve values by referring to their corresponding keys. Dictionaries are very useful when you want to store data in the form of key-value pairs, such as dictionary definitions, test scores, survey results, etc.
+
+Example of creating a dictionary:
+```python
+dictionary = {"key1": "value1", "key2": "value2", "key3": "value3"}  # Creating a dictionary
+print(dictionary)  # Displaying the dictionary
+```
+It's important to remember that both in sets and dictionaries, keys (in the case of dictionaries) and elements (in the case of sets) must be hashable, meaning they must be immutable (e.g., numbers, strings, tuples), and they must have a defined hashing method.
+
+--------------------------------------------------------------------------------
+
+6.
+Additionally, introduce sets and dictionaries and perform basic operations on them.
+
+  a. ...
+
+  b. ...
+
+  c. ...
+
+  d. ...
+
+  e. Set Operations: Perform union, intersection, and difference operations on the set.
+
+  f. Dictionary Operations: Print the dictionary, add a new key-value pair, and delete an existing key-value pair.
+
+  g. Print Output: Print the modified list, unchanged tuple, set operations results, and updated dictionary.
+
+  example:
+  ```
+  Enter a series of space-separated integers: 5 2 8 1 9
+
+  Tuples are immutable and cannot be modified.
+  Original Dictionary: {5: 25, 2: 4, 8: 64, 1: 1, 9: 81}
+  Modified list: [5, 2, 20, 1, 9, 10]
+  Tuple remains unchanged: (5, 2, 8, 1, 9)
+  Union of set: {1, 2, 5, 9, 10, 11, 12}
+  Intersection of set: {8, 5}
+  Difference of set: {9}
+  Updated Dictionary: {5: 25, 2: 4, 1: 1, 9: 81, 11: 121}
+
+  ```
+"""
+
+input_numbers = input("Enter a series of space-separated integers: ")
+
+numbers_list = []
+current_number = ""
+
+for char in input_numbers:
+    if char != ' ':
+        current_number += char
+    else:
+        if current_number:
+            numbers_list.append(int(current_number))
+            current_number = ""
+
+if current_number:
+    numbers_list.append(int(current_number))
+
+numbers_tuple = tuple(numbers_list)
+
+numbers_list.append(10)
+numbers_list.insert(2, 20)
+numbers_list.remove(8)
+
+try:
+    numbers_list.append(10)
+    numbers_tuple.append(10)
+except AttributeError:
+    print("Tuples are immutable and cannot be modified.")
+try:
+    numbers_list.insert(2, 20)
+    numbers_tuple.insert(2, 20)
+except AttributeError:
+    pass
+try:
+    numbers_tuple.remove(2)
+    numbers_list.remove(2)
+except AttributeError:
+    pass
+
+set1 = {x for x in numbers_tuple}
+set2 = {5, 8}
+set_union = set1.union(set2)
+set_intersection = set1.intersection(set2)
+set_difference = set2.difference(set1)
+
+numbers_dict = {num: num*num for num in numbers_tuple}
+print("Original Dictionary:", numbers_dict)
+
+numbers_dict[11] = 121
+numbers_dict.pop(8)
+
+print("Modified list:", numbers_list)
+print("Tuple remains unchanged:", numbers_tuple)
+print("Union of set:", set_union)
+print("Intersection of set:", set_intersection)
+print("Difference of set:", set_difference)
+print("Updated Dictionary:", numbers_dict)
+
+
+
 
 
